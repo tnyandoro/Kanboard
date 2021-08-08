@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import printMe from './print';
+import './trello.css'
 
 function component() {
   const onediv = document.createElement('div');
