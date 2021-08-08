@@ -2,20 +2,23 @@ import _ from 'lodash';
 import printMe from './print';
 import './trello.css'
 
-function component() {
-  const onediv = document.createElement('div');
-  const btn = document.createElement('button');
-  // onediv.id = 'content';
-  // document.getElementsByTagName('body')[0].appendChild('#onediv');
 
-  // Lodash now  imported by this script
-  onediv.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
+function Board(title){
+let nextId = 0;
 
-  onediv.appendChild(btn);
-  return onediv;
-  
+this.title = title;
+this.list = [];
+this.cards = {};
+
+this.node = document.createElement('div');
+this.titleNode = document.createElement('div');
+this.listsNode = document.createElement('div');
+
+this.node.id = 'board';
+this.titleNode.id = 'kanboard-title-board';
+this.listsNode.id = 'kanboard-canvas-board';
+
+// new list title form 
+
+this.titleFormNode = buildListTitleForm()
 }
-
-document.body.appendChild(component());
